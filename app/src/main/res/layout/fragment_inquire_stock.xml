@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:background="@color/bg_color_2"
+    android:orientation="vertical">
+
+    <com.rose.android.view.ContractDetailItemView
+        android:id="@+id/ci_today_exchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ct_item_title="当日成交"></com.rose.android.view.ContractDetailItemView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/divider_color"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <com.rose.android.view.ContractDetailItemView
+        android:id="@+id/ci_commission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ct_item_title="当日委托"></com.rose.android.view.ContractDetailItemView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/bg_color_1"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <com.rose.android.view.ContractDetailItemView
+        android:id="@+id/ci_history_exchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ct_item_title="历史成交"></com.rose.android.view.ContractDetailItemView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/divider_color"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <com.rose.android.view.ContractDetailItemView
+        android:id="@+id/ci_commission_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ct_item_title="历史委托"></com.rose.android.view.ContractDetailItemView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/bg_color_1"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <com.rose.android.view.ContractDetailItemView
+        android:id="@+id/ci_trading_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ct_item_title="当日资金流水"></com.rose.android.view.ContractDetailItemView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/divider_color"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <com.rose.android.view.ContractDetailItemView
+        android:id="@+id/ci_trading_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ct_item_title="历史资金流水"></com.rose.android.view.ContractDetailItemView>
+
+</LinearLayout>

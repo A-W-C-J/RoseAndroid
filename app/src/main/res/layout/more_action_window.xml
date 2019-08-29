@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color_1"
+    android:orientation="vertical">
+
+    <TextView
+        android:background="@drawable/selector_more_action_item"
+        android:id="@+id/zoom_out"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="放大合约" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="0.2dp"
+        android:background="@color/divider_color" />
+
+    <TextView
+        android:background="@drawable/selector_more_action_item"
+        android:id="@+id/add_margin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="追加本金" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="0.2dp"
+        android:background="@color/divider_color" />
+</LinearLayout>

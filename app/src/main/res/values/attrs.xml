@@ -1,0 +1,33 @@
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="MineItemView">
+        <attr name="icon_left" format="reference" />
+        <attr name="icon_right" format="reference" />
+        <attr name="item_title" format="string" />
+        <attr name="tag_icon" format="string" />
+        <attr name="item_text_color" format="reference|color" />
+    </declare-styleable>
+    <declare-styleable name="ContractDetailItemView">
+        <attr name="ct_tag_icon" format="string" />
+        <attr name="ct_icon_right" format="reference" />
+        <attr name="ct_item_title" format="string" />
+        <attr name="ct_right_title" format="string" />
+        <attr name="ct_right_color" format="reference|color" />
+        <attr name="ct_icon_visiable" format="integer" />
+        <attr name="ct_right_icon_visiable" format="integer" />
+        <attr name="ct_sub_title" format="string" />
+    </declare-styleable>
+    <declare-styleable name="NumberEditText">
+        <attr name="leftControlImage" format="reference"/>
+        <attr name="rightControlImage" format="reference"/>
+        <attr name="centerEditBackground" format="reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="textSize" format="dimension|reference"/>
+        <attr name="hint" format="string|reference"/>
+    </declare-styleable>
+</resources>

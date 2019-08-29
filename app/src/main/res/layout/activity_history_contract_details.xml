@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_1"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/app_bar_layout" />
+
+
+    <ScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.rose.android.view.ContractDetailItemView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/divider_color" />
+
+            <TextView
+                android:id="@+id/contract_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:id="@+id/tv_gg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_jk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_cp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_zc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ct_item_title="资产总值"></com.rose.android.view.ContractDetailItemView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/divider_color"
+                android:padding="@dimen/activity_horizontal_margin" />
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_lj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ct_item_title="累计盈亏"
+                app:ct_right_color="@color/red"></com.rose.android.view.ContractDetailItemView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/divider_color"
+                android:padding="@dimen/activity_horizontal_margin" />
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_js"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ct_item_title="结算退还"
+                app:ct_right_color="@color/red"></com.rose.android.view.ContractDetailItemView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/divider_color"
+                android:padding="@dimen/activity_horizontal_margin" />
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_gl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ct_item_title="实收管理费"></com.rose.android.view.ContractDetailItemView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/divider_color"
+                android:padding="@dimen/activity_horizontal_margin" />
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_hy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ct_item_title="查看合约流水"></com.rose.android.view.ContractDetailItemView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/divider_color"
+                android:padding="@dimen/activity_horizontal_margin" />
+
+            <com.rose.android.view.ContractDetailItemView
+                android:id="@+id/ci_ls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ct_item_title="查看历史交易"></com.rose.android.view.ContractDetailItemView>
+
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

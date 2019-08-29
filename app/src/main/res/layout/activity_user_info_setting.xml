@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_1"
+    tools:context="com.rose.android.ui.activity.UserInfoSettingActivity">
+
+    <include layout="@layout/app_bar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/ll_update_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color_2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/activity_vertical_margin">
+
+            <com.rose.android.view.CircleImageView
+                android:id="@+id/iv_head"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:transitionName="profile"
+                app:border_color="@color/red"
+                app:border_width="1dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="修改头像"
+                android:textColor="@color/title_color_1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@mipmap/ic_right" />
+        </LinearLayout>
+
+        <com.rose.android.view.ContractDetailItemView
+            android:id="@+id/ci_real_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/bg_color_2"
+            app:ct_item_title="实名认证"
+            app:ct_right_color="@color/color_gold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/divider_color" />
+
+        <com.rose.android.view.ContractDetailItemView
+            android:id="@+id/ci_bank_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color_2"
+            app:ct_item_title="绑定银行卡"
+            app:ct_right_color="@color/color_gold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/divider_color" />
+
+        <com.rose.android.view.ContractDetailItemView
+            android:id="@+id/ci_phone_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color_2"
+            app:ct_item_title="绑定手机号" />
+
+        <com.rose.android.view.ContractDetailItemView
+            android:id="@+id/ci_login_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/bg_color_2"
+            app:ct_item_title="登录密码" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/divider_color" />
+
+        <com.rose.android.view.ContractDetailItemView
+            android:id="@+id/ci_withdraw_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color_2"
+            app:ct_item_title="提款密码"
+            app:ct_right_color="@color/color_gold" />
+
+        <com.rose.android.view.ContractDetailItemView
+            android:id="@+id/ci_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/bg_color_2"
+            app:ct_item_title="退出当前账号" />
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
+
+
+

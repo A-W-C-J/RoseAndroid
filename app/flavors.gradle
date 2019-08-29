@@ -1,0 +1,36 @@
+android {
+    productFlavors {
+        flavorDimensions "package"
+        yqz {
+            dimension "package"
+            applicationId "com.yqz.yqz"
+            resValue "string", "app_name", "瑞云平台"
+            versionName "$rootProject.versionName"
+            buildConfigField "Boolean", "ISTEST", 'Boolean.parseBoolean("false")'
+            manifestPlaceholders = [
+                    TD_APP_ID           : "78791702F3484161B4D5477DA9B151CE",
+                    UMENG_APPKEY        : "5a279217b27b0a376400021f",
+                    UMENG_MESSAGE_SECRET: "78791702F3484161B4D5477DA9B151CE",
+                    app_icon            : "@mipmap/ic_launcher",
+                    app_icon_round      : "@mipmap/ic_launcher",
+                    QQ_APP_ID           : "tencent1106501833"
+            ]
+        }
+        yqztest {
+            minSdkVersion 21
+            dimension "package"
+            applicationId "com.yqz.yqz.test"
+            resValue "string", "app_name", "一起涨"
+            versionName "$rootProject.versionName"
+            buildConfigField "Boolean", "ISTEST", 'Boolean.parseBoolean("true")'
+            manifestPlaceholders = [
+                    TD_APP_ID           : "78791702F3484161B4D5477DA9B151CE",
+                    UMENG_APPKEY        : "5a279217b27b0a376400021f",
+                    UMENG_MESSAGE_SECRET: "78791702F3484161B4D5477DA9B151CE",
+                    app_icon            : "@mipmap/ic_launcher_test",
+                    app_icon_round      : "@mipmap/ic_launcher_round_test",
+                    QQ_APP_ID           : "tencent1106501833"
+            ]
+        }
+    }
+}

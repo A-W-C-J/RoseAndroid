@@ -1,0 +1,258 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_1"
+    tools:context="com.rose.android.ui.fragment.MineFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_no_login"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/bg_color_2"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/selector_login_gold"
+                        android:text="@string/login_or_registered"
+                        android:textColor="@color/bg_color_2"
+                        android:transitionName="login_btn" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_has_login"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/bg_color_2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.rose.android.view.CircleImageView
+                        android:id="@+id/iv_image"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:src="@mipmap/ic_new_hand"
+                        android:transitionName="profile"
+                        app:border_color="@color/red"
+                        app:border_width="1dp" />
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/content_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_chevron_right_white_36dp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/bg_color_2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/balance"
+                            android:textColor="@color/title_color_2" />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1235.00"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/title_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:gravity="center_vertical">
+
+                        <Button
+                            android:id="@+id/recharge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:background="@drawable/shape_cash_btn"
+                            android:text="@string/cash_in"
+                            android:textColor="@color/color_gold" />
+
+                        <Button
+                            android:id="@+id/withdrawal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:background="@drawable/shape_cash_btn"
+                            android:text="@string/cash_out"
+                            android:textColor="@color/color_gold" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/ci_cash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:icon_left="@mipmap/ic_cash"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/cash" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/divider_color" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/ci_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon_left="@mipmap/ic_integral"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/integral" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/ci_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:icon_left="@mipmap/ic_contract_history"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="历史合约" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/share_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:icon_left="@mipmap/ic_share_profile"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/share_profile" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/divider_color" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/task_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon_left="@mipmap/ic_task_center"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/task" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/divider_color" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/ci_zc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon_left="@mipmap/ic_asset_coun"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/asset_count" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/divider_color" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/ci_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon_left="@mipmap/ic_card_coupons"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/coupons" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/help_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:icon_left="@mipmap/ic_help_center"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/help_center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/divider_color" />
+
+            <com.rose.android.view.MineItemView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon_left="@mipmap/ic_about_us"
+                app:icon_right="@mipmap/ic_right"
+                app:item_text_color="@color/white"
+                app:item_title="@string/about_us" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

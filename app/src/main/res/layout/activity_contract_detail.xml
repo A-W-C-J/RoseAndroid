@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_1"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/app_bar_layout" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_color_2"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/tv_contract_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/contract_rule"
+                    android:textColor="@color/title_color_3"
+                    android:textSize="@dimen/content_size" />
+
+                <TextView
+                    android:id="@+id/tv_sharing_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/shape_cash_btn"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="100%分配"
+                    android:textColor="@color/color_gold"
+                    android:textSize="@dimen/content_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/bg_color_2"
+                android:orientation="vertical">
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_base_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="杠杆本金"
+                    app:ct_right_color="@color/red"></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_manager_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="管理费"
+                    app:ct_right_color="@color/red"
+                    app:ct_sub_title="(预存2日费用)"></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_warning_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="警戒线"
+                    app:ct_tag_icon=" ? "></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_stop_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="止损线"
+                    app:ct_tag_icon=" ? "></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_trading_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="持仓时间"></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_hold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="单票持仓"></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_begin_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="开始交易"></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+
+                <com.rose.android.view.ContractDetailItemView
+                    android:id="@+id/ci_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ct_item_title="抵用券"></com.rose.android.view.ContractDetailItemView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/divider_color"
+                    android:padding="@dimen/activity_horizontal_margin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/read_and_accept" />
+
+                <TextView
+                    android:id="@+id/contract_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/contract_txt"
+                    android:textColor="@color/color_gold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_application_now"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_login_gold"
+                android:text="@string/application_now"
+                android:textColor="@color/bg_color_2" />
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

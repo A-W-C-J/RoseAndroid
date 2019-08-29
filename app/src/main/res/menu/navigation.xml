@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/drawable_ic_index"
+        android:title="@string/index" />
+
+    <item
+        android:id="@+id/trader"
+        android:icon="@drawable/drawable_ic_trader"
+        android:title="@string/trader" />
+
+    <item
+        android:id="@+id/contract"
+        android:icon="@drawable/drawable_ic_contract"
+        android:title="@string/contract" />
+    <item
+        android:id="@+id/mine"
+        android:icon="@drawable/drawable_ic_mine"
+        android:title="@string/mine" />
+</menu>

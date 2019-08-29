@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_2"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@color/input_bg_color"
+            android:gravity="center"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/et_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="7"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/color_gold"
+
+                android:textSize="@dimen/content_size" />
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:text="借款金额"
+        android:textColor="@color/title_color_3"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_oval_gold" />
+
+    <com.lantouzi.wheelview.WheelView
+        android:id="@+id/horizontalscaleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lwvMarkColor="@color/title_color_3"
+        app:lwvIntervalFactor="0.5"
+        app:lwvHighlightColor="@color/color_gold" />
+
+    <RelativeLayout
+        android:id="@+id/rl_rate"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_weight="1"></RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_recangle_gold"
+        android:text="支付本金马上申请 >>"
+        android:textColor="@color/bg_color_2" />
+</LinearLayout>

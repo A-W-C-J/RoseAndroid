@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rose.android">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:name=".RoseApplication"
+        android:allowBackup="true"
+        android:icon="${app_icon}"
+        android:label="@string/app_name"
+        android:roundIcon="${app_icon_round}"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.newstruct.UserSigninActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.UserInfoSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ApplicationContractActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ApplicationContractDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.CouponListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ActivityContractDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ContractDetailsDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.ExperienceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.LimitedBuyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.CommissionedTransactionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.HistoryContractDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.WebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.DealOrExchangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.FlowsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AuthNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.GuideActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".ui.activity.ContractFlowsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AuthBankCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AuthPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.CashActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AllCouponListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.afollestad.materialcamera.CaptureActivity"
+            android:theme="@style/MaterialCamera.CaptureActivity" />
+        <activity
+            android:name="com.afollestad.materialcamera.CaptureActivity2"
+            android:theme="@style/MaterialCamera.CaptureActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.activity.WithdrawalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SetWithdrawalPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.UpdateLoginPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ForgetLoginPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.HelpCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.AssetTotalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.TaskCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SharePartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.GuguaRechargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ShoumiPayRechargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="${applicationId}.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.jiyunxueyuanandroid.WebActivity" />
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${QQ_APP_ID}" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver android:name="com.peng.openpush.TestPushReceiver">
+            <intent-filter>
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_NOTIFICATION" />
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_NOTIFICATION_CLICK" />
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_MESSAGE" />
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_COMMAND_RESULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.talkingdata.sdk.TDAntiCheatingService"
+            android:process="com.talkingdata.sdk.TDAntiCheatingService">
+            <intent-filter>
+                <action android:name="com.talkingdata.sdk.TDAntiCheatingService" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="TD_APP_ID"
+            android:value="${TD_APP_ID}" />
+        <meta-data
+            android:name="OnePush_UMENG_104"
+            android:value="com.peng.one.push.umeng.UMengPushClient" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENG_APPKEY}" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="${UMENG_MESSAGE_SECRET}" />
+
+        <activity android:name=".ui.activity.ShareDetailsActivity" />
+        <activity android:name=".ui.activity.QRCodeActivity" />
+        <activity android:name=".ui.activity.ZoomOutContractActivity" />
+        <activity android:name=".ui.activity.AddMarginActivity" />
+        <activity android:name=".ui.activity.SearchActivity" />
+        <activity android:name=".ui.activity.StockDetailsActivity" />
+        <activity android:name=".ui.activity.SelectContractToBuyActivity" />
+        <activity android:name=".ui.activity.SelectContractActivity" />
+        <activity android:name=".ui.activity.HistoryContractActivity"/>
+    </application>
+
+</manifest>

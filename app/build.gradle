@@ -1,0 +1,164 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'packer'
+//apply plugin: 'org.sonarqube'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.rose.rose_android"
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 10
+        versionName "1.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86'//, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release_yqz {
+            storeFile file("../yqzkey.jks")
+            storePassword "android"
+            keyAlias "key"
+            keyPassword "android"
+            v2SigningEnabled true
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            debuggable false
+            minifyEnabled true
+            signingConfig signingConfigs.release_yqz
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "USER_SERVER", "\"http://jinniubao.testhost.com/\""
+            buildConfigField "String", "HOST_SERVER", "\"http://jinniubao.testhost.com/\""
+            buildConfigField "String", "BUGLY_APPID", "\"0905eeea4c\""
+            buildConfigField "String", "WX_APPID", "\"wx7d2abec7dd15b1f8\""
+            buildConfigField "String", "WX_KEY", "\"c5f3304bd7ebf7a87b2fb43403338265\""
+            buildConfigField "String", "QQ_APPID", "\"1106501833\""
+            buildConfigField "String", "QQ_KEY", "\"vD1paMePi1ciTxCT\""
+            buildConfigField "String", "QIYU_APPID", "\"1158a737b3bff56cb364da99777fa4a1\""
+        }
+        debug {
+            shrinkResources false
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.release_yqz
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "USER_SERVER", "\"http://jinniubao.testhost.com/\""
+            buildConfigField "String", "HOST_SERVER", "\"http://jinniubao.testhost.com/\""
+            applicationIdSuffix ".test"
+            buildConfigField "String", "BUGLY_APPID", "\"0905eeea4c\""
+            buildConfigField "String", "WX_APPID", "\"wx7d2abec7dd15b1f8\""
+            buildConfigField "String", "WX_KEY", "\"c5f3304bd7ebf7a87b2fb43403338265\""
+            buildConfigField "String", "QQ_APPID", "\"1106501833\""
+            buildConfigField "String", "QQ_KEY", "\"vD1paMePi1ciTxCT\""
+            buildConfigField "String", "QIYU_APPID", "\"1158a737b3bff56cb364da99777fa4a1\""
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    dexOptions {
+        javaMaxHeapSize '4096m'
+    }
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+    lintOptions {
+        lintConfig rootProject.file('lint.xml')
+    }
+    applicationVariants.all { variant ->
+        if (!variant.assemble.name.contains("test") && !variant.assemble.name.contains("Debug")) {
+            variant.outputs.all { output ->
+                output.setVersionCodeOverride(gitVersionCode())
+            }
+        }
+    }
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+def gitVersionCode() {
+    1000 + Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim() + "0")
+}
+
+apply from: 'dependencies.gradle'
+apply from: 'flavors.gradle'
+apply from: 'jacoco.gradle'
+dependencies {
+    implementation files('libs/SaaS_AppAnalytics_Android_SDK_V4.0.9.jar')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation project(path: ':updatepluginlib', configuration: 'default')
+    implementation project(path: ':lib_wheelView', configuration: 'default')
+    implementation project(path: ':lib_shoumipay', configuration: 'default')
+
+    //==== apache common
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+
+    implementation(project(path: ':imagepicker', configuration: 'default')) {
+        exclude module: 'glide'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'appcompat-v7'
+    }
+    implementation 'com.peng.library:one-push-core:1.2.1'
+    implementation 'com.peng.library:one-push-umeng:1.2.2'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.qiyukf.unicorn:unicorn:3.12.0'
+    implementation files('libs/SocialSDK_QQ_Simplify.jar')
+    implementation files('libs/SocialSDK_WeChat_Simplify.jar')
+    implementation files('libs/umeng_social_api.jar')
+    implementation files('libs/umeng_social_net.jar')
+    implementation files('libs/umeng_social_tool.jar')
+    implementation 'com.google.code.findbugs:annotations:3.0.0'
+}
+task setTestVersionName {
+    doFirst {
+        println('09877655')
+    }
+}
+//sonarqube {
+//    properties {
+//        property 'sonar.exclusions', "**/build/**,**/bugly/**,**/libs/**,**/imagepicker/**,**/lib_shoumipay/**,**/lib_wheelView/**,**/updatepluginlib/**,**/model/**,**/yqz/yqz/wxapi/**,**/AndroidManifest.xml,src/main/java/com/rose/android/ui/activity/BaseActivity.java,src/main/java/com/rose/android/ui/fragment/BaseFragment.java"
+//        property 'sonar.projectName', "rose-android"
+//        property 'sonar.profile', "FindBugs"
+//        property 'sonar.projectVersion', "$rootProject.versionName"
+//        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/testYqztestDebugUnitTest.exec"
+//    }
+//}

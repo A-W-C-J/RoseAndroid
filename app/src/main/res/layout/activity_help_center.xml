@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_1"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/app_bar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:background="@color/bg_color_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/base"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:drawableTop="@mipmap/ic_base_knowleage"
+                android:gravity="center"
+                android:text="基础知识"
+                android:textColor="@color/title_color_1" />
+
+            <TextView
+                android:id="@+id/trade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:drawableTop="@mipmap/ic_stock_trade"
+                android:gravity="center"
+                android:text="股票交易"
+                android:textColor="@color/title_color_1" />
+
+            <TextView
+                android:id="@+id/out_in"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:drawableTop="@mipmap/ic_out_in"
+                android:gravity="center"
+                android:text="充值提现"
+                android:textColor="@color/title_color_1" />
+        </LinearLayout>
+
+        <com.rose.android.view.ContractDetailItemView
+            android:background="@color/bg_color_2"
+            android:id="@+id/ci_online"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:ct_item_title="在线客服"
+            app:ct_right_color="@color/title_color_3" />
+
+        <com.rose.android.view.ContractDetailItemView
+            android:background="@color/bg_color_2"
+            android:id="@+id/ci_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ct_item_title="电话客服"
+            app:ct_right_color="@color/title_color_3">
+
+        </com.rose.android.view.ContractDetailItemView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
